@@ -1,0 +1,49 @@
+.backgroundHome{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transform: scale(3);
+
+    .mask-lines{
+        stroke-dasharray: 2000;
+        animation: linesincrease 4s linear forwards;
+    }
+
+    .lines{
+      transform-origin: center;
+      animation: linesrotate 200s linear infinite 3.5s;  
+    }
+
+    .circle{
+      animation: fadeIn 2s linear forwards;
+    }
+}
+
+
+
+@keyframes linesincrease {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 2000;
+    }
+}
+
+@keyframes linesrotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+}
