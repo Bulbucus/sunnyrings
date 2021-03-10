@@ -1,13 +1,24 @@
-import {ReactComponent as Background} from '../../assets/inicialPag/background2.svg'
+
+import {ReactComponent as FacebookIcon} from '../../assets/inicialPag/facebookIcon.svg';
+import {ReactComponent as InstagramIcon} from '../../assets/inicialPag/instagramIcon.svg';
+import {ReactComponent as MailIcon} from '../../assets/inicialPag/mailIcon.svg';
+
 
 import './Home.scss'
 
 const Home = () => {
 
     return (
-        <>
-            <Background className="backgroundHome"></Background>
-        </>
+        <div className="home">
+            <div className="home_background"></div>
+            <div className="home_contacts">
+                <div className="home_contacts_container">
+                    <FacebookIcon className="home_contacts_facebook"></FacebookIcon>
+                    <InstagramIcon className="home_contacts_instagram"></InstagramIcon>
+                    <MailIcon className="home_contacts_mail"></MailIcon>
+                </div>
+            </div>
+        </div>
     )
 }
 

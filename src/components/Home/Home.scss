@@ -1,49 +1,122 @@
-.backgroundHome{
-    position: absolute;
-    width: 100vw;
+@import '../../style/color.scss';
+@import '../../style/font.scss';
+
+.home{
+  height: 100vh;
+  max-height: -webkit-fill-available;
+  width: 100%;
+
+  &_background{
+    position: fixed;
     height: 100vh;
-    transform: scale(3);
+    width: 100vw;
+    z-index: -1000;
 
-    .mask-lines{
-        stroke-dasharray: 2000;
-        animation: linesincrease 4s linear forwards;
+    @media (min-width:1440px){
+      width: 1440px;
     }
+  
+    background-image: url('../../assets/inicialPag/background.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 250%;
 
-    .lines{
-      transform-origin: center;
-      animation: linesrotate 200s linear infinite 3.5s;  
+    // para ajustar o background consoante o tamanho do ecra, para ser dinamico
+    @media (max-width:700px){
+      background-size: 300%;
     }
+  
+    @media (max-height:700px){
+      background-size: 200%;
+    }
+  
+    @media (max-width:425px){
+      background-size: 350%;
+    }
+  }
+}
 
-    .circle{
-      animation: fadeIn 2s linear forwards;
+.home_contacts{
+  position: fixed;
+  width: 100%;
+
+  @media (min-width:1440px){
+    width: 1440px;
+  }
+
+  &_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 1000;
+
+    float: right;
+
+    background-image: url('../../assets/inicialPag/stick.svg');
+
+    margin: 20px 10px;
+    padding: 15px;
+
+    @media (max-width:425px){
+      margin: 10px 10px;
+      padding: 10px 10px 5px 10px;
     }
+    
+    //animation
+    opacity: 0;
+    animation: fadeInIcons 2s linear forwards 1s;
+  }
+
+  svg{
+    margin: 0 5px;
+    cursor:pointer;
+  }
+
+  &_facebook{
+    height: 40px;
+
+        //animation
+    opacity: 0;
+    animation: fadeInIcons 400ms linear forwards 2.6s;
+
+    @media (max-width:425px){
+      height: 20px;
+    }
+  }
+
+  &_instagram{
+    height: 40px;
+
+    //animation
+    opacity: 0;
+    animation: fadeInIcons 400ms linear forwards 2.4s;
+
+    @media (max-width:425px){
+      height: 20px;
+    }
+  }
+
+  &_mail{
+    height: 40px;
+
+    //animation
+    opacity: 0;
+    animation: fadeInIcons 400ms linear forwards 2.2s;
+
+    @media (max-width:425px){
+      height: 20px;
+    }
+  }
 }
 
 
+@keyframes fadeInIcons {
+  from{
+    opacity: 0;
+  }
 
-@keyframes linesincrease {
-    from {
-      stroke-dashoffset: 0;
-    }
-    to {
-      stroke-dashoffset: 2000;
-    }
-}
-
-@keyframes linesrotate {
-    from {
-        transform: rotate(0);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
+  to{
+    opacity: 1;
+  }
 }
