@@ -1,5 +1,6 @@
 @import '../../style/color.scss';
 @import '../../style/font.scss';
+@import '../../style/keyframes.scss';
 
 .home{
   height: 100vh;
@@ -26,97 +27,98 @@
       background-size: 300%;
     }
   
-    @media (max-height:700px){
+    @media (max-height:800px){
       background-size: 200%;
     }
   
+    //mobile
     @media (max-width:425px){
       background-size: 350%;
     }
   }
-}
 
-.home_contacts{
-  position: fixed;
-  width: 100%;
+  &_contacts{
+    position: relative;
+    width: 100%;
+  
+    //mobile
+    @media (min-width:1440px){
+      width: 1440px;
+    }
+  
+    &_container{
+      position: absolute;
 
-  @media (min-width:1440px){
-    width: 1440px;
+      right: 0;
+  
+      z-index: 1000;
+  
+      background-image: url('../../assets/inicialPag/stick.svg');
+  
+      margin: 20px 10px;
+      padding: 15px;
+  
+          
+      //animation
+      opacity: 0;
+      animation: fadeInIcon 2s linear forwards 1s;
+  
+      //mobile
+      @media (max-width:425px){
+        margin: 10px 10px;
+        padding: 10px 10px 5px 10px;
+      }
+    }
+  
+    svg{
+      height: 40px;
+      margin: 0 5px;
+  
+      cursor:pointer;
+  
+      @media (max-width:425px){
+        height: 20px;
+      }
+    }
+  
+    &_facebook{
+      //animation
+      opacity: 0;
+      animation: fadeInIcon 1s linear forwards 2.6s;
+    }
+  
+    &_instagram{
+      //animation
+      opacity: 0;
+      animation: fadeInIcon 1s linear forwards 2.4s;
+    }
+  
+    &_mail{
+      //animation
+      opacity: 0;
+      animation: fadeInIcon 1s linear forwards 2.2s;
+    }
+  
   }
 
-  &_container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    z-index: 1000;
-
-    float: right;
-
-    background-image: url('../../assets/inicialPag/stick.svg');
-
-    margin: 20px 10px;
-    padding: 15px;
-
+  &_arrows{
+    position: fixed;
+    width: 100px;
+    bottom: 0px;
+    left: 50%;
+  
+    transform: translate(-50%, -50%);
+  
+    z-index: -100;
+  
+    //mobile
     @media (max-width:425px){
-      margin: 10px 10px;
-      padding: 10px 10px 5px 10px;
+      bottom: 0px;
+      width: 80px;
     }
-    
+  
     //animation
     opacity: 0;
-    animation: fadeInIcons 2s linear forwards 1s;
-  }
-
-  svg{
-    margin: 0 5px;
-    cursor:pointer;
-  }
-
-  &_facebook{
-    height: 40px;
-
-        //animation
-    opacity: 0;
-    animation: fadeInIcons 400ms linear forwards 2.6s;
-
-    @media (max-width:425px){
-      height: 20px;
-    }
-  }
-
-  &_instagram{
-    height: 40px;
-
-    //animation
-    opacity: 0;
-    animation: fadeInIcons 400ms linear forwards 2.4s;
-
-    @media (max-width:425px){
-      height: 20px;
-    }
-  }
-
-  &_mail{
-    height: 40px;
-
-    //animation
-    opacity: 0;
-    animation: fadeInIcons 400ms linear forwards 2.2s;
-
-    @media (max-width:425px){
-      height: 20px;
-    }
-  }
-}
-
-
-@keyframes fadeInIcons {
-  from{
-    opacity: 0;
-  }
-
-  to{
-    opacity: 1;
+    animation: 1s fadeInIcon 3s linear forwards, bounceIcon 2s ease-out infinite;
   }
 }

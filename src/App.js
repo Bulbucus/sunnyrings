@@ -1,14 +1,19 @@
-import Home from './components/Home/Home'
+
+import Produto from './hook/Produto/Produto';
+
+import Home from './components/Home/Home';
+import InoxRing from './components/InoxRing/InoxRing';
 
 import './App.scss';
 
 function App() {
 
-
   return (
     <>
     <Home></Home>
-    <div className='test'></div>
+    <Produto title="Anel em Inox">
+      <InoxRing></InoxRing>
+    </Produto>
     </>
   );
 }

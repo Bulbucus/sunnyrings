@@ -1,4 +1,5 @@
 @import './style/color.scss';
+@import './style/font.scss';
 
 #root{
     margin: 0 auto;
@@ -8,9 +9,44 @@
     }
 }
 
-.test{
-    width: 100%;
-    height: 2000px;
-    background-color: $brown;
+.orange{
+    background:$orange;
+    color:#fff;
 }
 
+.yellow{
+    background:$yellow;
+    color:#000;
+}
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 10px 5px;
+
+    border-radius: 10px;
+    .thumbnail{
+        font-family: 'Font1', sans-serif;
+        font-size: $font_big;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    p, .text{
+        font-family: 'K2D', sans-serif;
+        font-weight: 200;
+        font-size: $font_small;
+        text-align: center;
+
+        margin: 10px 10px;
+    }
+}
+
+.title{
+    font-family: 'Font1', sans-serif;
+    font-size: $font_extra_big;
+    text-align: center;
+    padding: 10px 0;
+}
