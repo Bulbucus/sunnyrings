@@ -1,10 +1,3 @@
-import {useEffect} from 'react';
-
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import locomotiveScroll from 'locomotive-scroll';
-
-
 import Section from './hook/Section/Section';
 
 import Home from './components/Home/Home';
@@ -18,29 +11,6 @@ import SobreNos from './components/SobreNos/SobreNos.js';
 import './App.scss';
 
 function App() {
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-    const locoScroll = new locomotiveScroll({
-      el: document.querySelector(".smooth-scroll"),
-      smooth: true,
-      smartphone: {
-        smooth: true
-      },
-    });
-    locoScroll.on("scroll", ScrollTrigger.update);
-    ScrollTrigger.scrollerProxy(".smooth-scroll", {
-      scrollTop(value) {
-        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
-      },
-      getBoundingClientRect() {
-        return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
-      },
-      pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
-    });
-    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
-    ScrollTrigger.refresh();
-  })
 
   return (
     <div className='smooth-scroll'>
