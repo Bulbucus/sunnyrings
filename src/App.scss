@@ -1,8 +1,37 @@
-@import './style/color.scss';
 @import './style/font.scss';
+@import './style/breakpoints.scss';
+
+:root{
+    //variables
+
+    //min-width for app:
+    --min-width-app:340px;
+    //colors
+    --orange:#FF974E;
+    --brown: #FFCA64;
+    --yellow: #FFEE59;
+
+    //fonts
+    --font-extra-big:1.5rem;
+    --font-big: 1.200rem;
+    --font-small: 0.950rem;
+    --font-extra-small: 0.750rem;
+
+    //rem
+    font-size: 16px;
+
+    @include desktop-breakpoint{
+        font-size: 22px;
+    }
+
+
+}
 
 #root{
+    min-width: var(--min-width-app);
     margin: 0 auto;
+
+    font-family: 'Roboto', sans-serif;
 
     @media (min-width:1440px){
         width: 1440px;
@@ -10,43 +39,132 @@
 }
 
 .orange{
-    background:$orange;
+    background:var(--orange);
     color:#fff;
+    fill: #fff;
+}
+
+.orange-linear{
+    background: linear-gradient(162.12deg, #FF974E 0%, rgba(255, 151, 78, 0.7) 100%);
+    color:#fff;
+    fill: #fff;
 }
 
 .yellow{
-    background:$yellow;
+    background:var(--yellow);
     color:#000;
+}
+
+.white{
+    background: #fff;
+    color:var(--orange);
+    fill: var(--orange);
+}
+
+.title{
+    font-family: 'Font1', sans-serif;
+    font-size: var(--font-extra-big);
+    text-align: center;
+    padding: 0.313rem 0;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.button{
+    display: flex;
+    align-items: center;
+    background: #FFFFFF;
+    color: var(--orange);
+    border-radius: 0.313rem;
+    padding: 0.625rem 0.500rem;
+    box-shadow: inset -1px -2px 3px rgba(0, 0, 0, 0.15), 2px 2px 3px rgba(0, 0, 0, 0.25);
 }
 
 .box{
     display: flex;
     flex-direction: column;
-    align-items: center;
 
-    margin: 10px 5px;
+    padding: 0.625rem;
 
-    border-radius: 10px;
     .thumbnail{
         font-family: 'Font1', sans-serif;
-        font-size: $font_big;
-        text-align: center;
-        margin: 5px 0;
+        font-size: var(--font-big);
+        margin: 0.313rem;
     }
 
-    p, .text{
-        font-family: 'K2D', sans-serif;
-        font-weight: 200;
-        font-size: $font_small;
-        text-align: center;
+    .text{
+        font-weight: 300;
+        font-size: var(--font-small);
+        margin-top: 0.313rem;
+        margin-bottom: 0.313rem;
+        span{
+            font-weight: bold;
+        }
+    }
 
-        margin: 10px 10px;
+    .note{
+        font-style: italic;
+        font-weight: 300;
+        font-size: var(--font-extra-small);
+        span{
+            font-weight: bold;
+        }
     }
 }
 
-.title{
-    font-family: 'Font1', sans-serif;
-    font-size: $font_extra_big;
-    text-align: center;
-    padding: 10px 0;
+.border{
+    border-radius: 0.5rem 0.5rem 0.5rem 0.5rem ;
 }
+
+.important{
+    width: fit-content;
+    background: #FA822D;
+    box-shadow: 0px 0.063rem 0.063rem rgba(0, 0, 0, 0.25);
+    border-radius: 0.625rem;
+
+    padding: 0.313rem 0.938rem;
+    margin: 0.313rem;
+
+    font-weight: 300;
+
+    span{
+        font-weight: bold;
+    }
+}
+
+.price{
+    width: fit-content;
+    background: #FF974E;
+
+    font-weight: 500;
+    font-size: 1.500rem;
+
+    padding: 0.133rem 0.938rem;
+    margin: 0.313rem 0.333rem;
+
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.25);
+    border-radius: 0.625rem;
+    span{
+        font-weight: bold;
+    }
+}
+
+.button{
+    width: fit-content;
+    margin: 0.625rem;
+    padding: 0.625rem 0.938rem;
+
+    font-weight: bold;
+    font-size: 1.500em;
+
+    box-shadow: inset -1px -2px 3px rgba(0, 0, 0, 0.35), 2px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.photo{
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: inset -1px 5px 10px rgba(0, 0, 0, 0.15);
+    padding: 0.750rem;
+}
+

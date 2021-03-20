@@ -1,21 +1,18 @@
-@import '../../style/color.scss';
-@import '../../style/font.scss';
 @import '../../style/keyframes.scss';
+@import '../../style/breakpoints.scss';
 
 .home{
   height: 100vh;
+  min-width: var(--min-width-app);
   max-height: -webkit-fill-available;
   width: 100%;
 
   &_background{
     position: fixed;
     height: 100vh;
+    min-width: var(--min-width-app);
     width: 100vw;
     z-index: -1000;
-
-    @media (min-width:1440px){
-      width: 1440px;
-    }
   
     background-image: url('../../assets/inicialPag/background.svg');
     background-repeat: no-repeat;
@@ -23,102 +20,130 @@
     background-size: 250%;
 
     // para ajustar o background consoante o tamanho do ecra, para ser dinamico
-    @media (max-width:700px){
-      background-size: 300%;
-    }
-  
     @media (max-height:800px){
       background-size: 200%;
+    }
+
+    @media (max-width:700px){
+      background-size: 300%;
     }
   
     //mobile
     @media (max-width:425px){
       background-size: 350%;
     }
+
+    //max width
+    @media (min-width:1440px){
+      width: 1440px;
+    }
   }
 
+  // contacts layour
   &_contacts{
     position: relative;
     width: 100%;
   
-    //mobile
+    //max width
     @media (min-width:1440px){
       width: 1440px;
     }
   
     &_container{
       position: absolute;
-
+      display: flex;
+      align-items: center;
+      
       right: 0;
-  
-      z-index: 1000;
-  
-      background-image: url('../../assets/inicialPag/stick.svg');
-  
-      margin: 20px 10px;
-      padding: 15px;
-  
-          
+
+      z-index: 1000;      
+      
+      background-color: var(--yellow);
+      border-radius: 5px;
+      box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+
+      padding: 5px;
+      margin-top: 20px;
+      margin-right: 20px;
+
       //animation
       opacity: 0;
-      animation: fadeInIcon 2s linear forwards 1s;
+      animation: fadeIn 2s linear forwards 1s;
   
-      //mobile
-      @media (max-width:425px){
-        margin: 10px 10px;
-        padding: 10px 10px 5px 10px;
+      //desktop-breakpoint
+      @include desktop-breakpoint {
+        padding: 10px;
       }
     }
   
+    // icons
     svg{
-      height: 40px;
+      height: 20px;
       margin: 0 5px;
   
       cursor:pointer;
   
-      @media (max-width:425px){
-        height: 20px;
+      @include desktop-breakpoint {
+        height: 40px;
       }
     }
   
     &_facebook{
       //animation
       opacity: 0;
-      animation: fadeInIcon 1s linear forwards 2.6s;
+      animation: fadeIn 1s linear forwards 2.6s;
     }
   
     &_instagram{
       //animation
       opacity: 0;
-      animation: fadeInIcon 1s linear forwards 2.4s;
+      animation: fadeIn 1s linear forwards 2.4s;
     }
   
     &_mail{
       //animation
       opacity: 0;
-      animation: fadeInIcon 1s linear forwards 2.2s;
+      animation: fadeIn 1s linear forwards 2.2s;
     }
   
   }
 
+  // arrows layour
   &_arrows{
     position: fixed;
-    width: 100px;
+    height: 50px;
+    width: 50px;
     bottom: 0px;
     left: 50%;
+
+    padding: 10px;   
   
+    border-radius: 50px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.25);
+
     transform: translate(-50%, -50%);
   
     z-index: -100;
-  
-    //mobile
-    @media (max-width:425px){
-      bottom: 0px;
-      width: 80px;
+
+    //desktop-breakpoint
+    @include desktop-breakpoint {
+      width: 70px;
+      height: 70px;  
+      padding: 15px;
     }
-  
+
     //animation
     opacity: 0;
-    animation: 1s fadeInIcon 3s linear forwards, bounceIcon 2s ease-out infinite;
+    animation: 1s fadeIn 3s linear forwards, bounceIcon 2s ease-out infinite;
+  }
+}
+
+
+@keyframes bounceIcon {
+  0%{
+      bottom: 0px;
+  }
+  50% {
+      bottom: -15px;
   }
 }

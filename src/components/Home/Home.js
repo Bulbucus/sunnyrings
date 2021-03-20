@@ -1,7 +1,7 @@
 import {ReactComponent as FacebookIcon} from '../../assets/inicialPag/facebookIcon.svg';
 import {ReactComponent as InstagramIcon} from '../../assets/inicialPag/instagramIcon.svg';
 import {ReactComponent as MailIcon} from '../../assets/inicialPag/mailIcon.svg';
-import {ReactComponent as Arrows} from '../../assets/inicialPag/arrow.svg';
+import {ReactComponent as Arrow} from '../../assets/inicialPag/arrow-down.svg';
 
 
 import './Home.scss'
@@ -18,8 +18,8 @@ const Home = () => {
                     <MailIcon className="home_contacts_mail"></MailIcon>
                 </div>
             </div>
-            <div className="home_arrows">
-                <Arrows ></Arrows>
+            <div className="home_arrows white">
+                <Arrow className="white"></Arrow>
             </div>
         </div>
     )

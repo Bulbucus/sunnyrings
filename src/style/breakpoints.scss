@@ -1,0 +1,7 @@
+$desktop-width: 769px;
+
+@mixin desktop-breakpoint{
+    @media (min-width: #{$desktop-width}){
+        @content
+    }
+}

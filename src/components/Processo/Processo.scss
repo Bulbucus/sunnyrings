@@ -1,0 +1,22 @@
+.processo{
+    padding-bottom: 0.625rem;
+
+    .box{
+        width: fit-content;
+        padding-top: 0;
+        margin: 0.625rem auto 0 auto;
+
+        .thumbnail{
+            text-align: center;
+        }
+    }
+
+    .video_container{
+        width: fit-content;
+        .video{
+            width: 192px;
+            height: auto;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+    }
+}

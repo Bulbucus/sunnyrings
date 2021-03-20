@@ -1,0 +1,40 @@
+@import '../../../style/keyframes.scss';
+
+.arame{
+    margin: auto;
+    padding: 0.625rem 0;
+
+    width: 340px;
+    .photo{
+        display: flex;
+        justify-content: center;
+
+        margin: 0.625rem 0.313rem 0 0.313rem;
+
+        border-radius: 0.5rem 0.5rem 0em 0rem ;
+        img{
+            width: 112px;
+            height: 163px;
+            animation: dropshadow 1s linear 1s forwards;
+        }
+    }
+
+    .box{
+        margin: 0 0.313rem 0.625rem 0.313rem ;
+        border-radius: 0rem 0rem 0.5rem 0.5rem ;
+        .important, .price{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .portes{
+            text-align: center;
+            span{
+                font-weight: bold;
+            }
+        }
+        .button{
+            align-self: center;
+        }
+    }
+    
+}

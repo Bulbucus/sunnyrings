@@ -1,20 +1,66 @@
+import {useEffect} from 'react';
 
-import Produto from './hook/Produto/Produto';
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+import locomotiveScroll from 'locomotive-scroll';
+
+
+import Section from './hook/Section/Section';
 
 import Home from './components/Home/Home';
-import InoxRing from './components/InoxRing/InoxRing';
+import Inox from './components/Produto/Inox/Inox';
+import Arame from './components/Produto/Arame/Arame';
+import Processo from './components/Processo/Processo';
+import Entrevista from './components/Entrevista/Entrevista';
+import SobreNos from './components/SobreNos/SobreNos.js';
+
 
 import './App.scss';
 
 function App() {
 
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const locoScroll = new locomotiveScroll({
+      el: document.querySelector(".smooth-scroll"),
+      smooth: true,
+      smartphone: {
+        smooth: true
+      },
+    });
+    locoScroll.on("scroll", ScrollTrigger.update);
+    ScrollTrigger.scrollerProxy(".smooth-scroll", {
+      scrollTop(value) {
+        return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+      },
+      getBoundingClientRect() {
+        return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+      },
+      pinType: document.querySelector(".smooth-scroll").style.transform ? "transform" : "fixed"
+    });
+    ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+    ScrollTrigger.refresh();
+  })
+
   return (
-    <>
-    <Home></Home>
-    <Produto title="Anel em Inox">
-      <InoxRing></InoxRing>
-    </Produto>
-    </>
+    <div className='smooth-scroll'>
+      <Home ></Home>
+      <Section title="Anel Inox">
+        <Inox></Inox>
+      </Section>
+      <Section title="Anel Arame">
+        <Arame></Arame>
+      </Section>
+      <Section title="Processo">
+        <Processo></Processo>
+      </Section>
+      <Section title="Entrevistas">
+        <Entrevista></Entrevista>
+      </Section>
+      <Section title="Sobre nós">
+        <SobreNos></SobreNos>
+      </Section>
+    </div>
   );
 }
 
