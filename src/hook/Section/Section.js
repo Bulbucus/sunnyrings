@@ -1,10 +1,10 @@
 import './Section.scss'
 
-const Produto = ({title, children}) => {
+const Produto = ({title, children, style}) => {
 
     return (
-        <div className="section">
-            <p className="white title">{title}</p>
+        <div className="section" style={style}>
+            <p className="white title"><span>{title}</span></p>
             {children}
         </div>
     )

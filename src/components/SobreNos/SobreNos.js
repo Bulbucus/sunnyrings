@@ -3,7 +3,7 @@ import './SobreNos.scss'
 const SobreNos = () => {
 
     return (
-        <div className='sobrenos'>
+        <div className='sobrenos fadein'>
             <div className='box orange border'>
                 <div className='text'>Etiam dignissim, tortor non dapibus egestas, sem leo dictum nisl, eget interdum risus diam non nisl. Ut suscipit lacus ut orci rutrum gravida. Curabitur vitae mi massa. </div>
             </div>

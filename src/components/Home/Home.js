@@ -3,10 +3,18 @@ import {ReactComponent as InstagramIcon} from '../../assets/inicialPag/instagram
 import {ReactComponent as MailIcon} from '../../assets/inicialPag/mailIcon.svg';
 import {ReactComponent as Arrow} from '../../assets/inicialPag/arrow-down.svg';
 
+//animaçao inicial
+import animation from './animation';
 
 import './Home.scss'
+import { useEffect } from 'react';
 
 const Home = () => {
+
+    useEffect(() => {
+        //animaçao inicial
+        animation();
+    },[])
 
     return (
         <div className="home">

@@ -1,0 +1,18 @@
+.video_container{
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    margin: 0 auto;
+    video{
+        max-width: 290px;
+        box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.40);
+    }
+    .play_icon{
+        position: absolute;
+        width: fit-content;
+
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

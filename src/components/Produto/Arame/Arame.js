@@ -5,7 +5,7 @@ import './Arame.scss'
 const Arame = () => {
 
     return (
-        <div className='arame'>
+        <div className='arame fadein'>
             <div className='photo'>
                 <img src={Ring4} alt='Ring_finish'></img>
             </div>

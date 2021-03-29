@@ -5,34 +5,28 @@ import VideoPhotoInox from '../../assets/videos/VideoInox.png';
 import VideoPhotoInox2 from '../../assets/videos/VideoInox2.png';
 import VideoPhotoArame from '../../assets/videos/VideoArame.png';
 
+import Video from '../../hook/Video/Video'
+
 import './Processo.scss'
 
 const Processo = () => {
 
     return (
         <div className='processo'>
-            <div className='box border orange'>
+            <div className='box border orange fadein'>
+                <div className='thumbnail'>Anel Inox</div>
+                    <Video poster={VideoPhotoInox} video={VideoInox} width='192px'/>
+            </div>
+            <div className='box border orange fadein'>
                 <div className='thumbnail'>Anel Inox</div>
                 <div className='video_container'>
-                    <video className='video' poster={VideoPhotoInox} onClick={(event) => {event.target.paused ? event.target.play() : event.target.pause()}}>
-                        <source src={VideoInox}></source>
-                    </video>
+                    <Video poster={VideoPhotoInox2} video={VideoInox2} width='192px'/>
                 </div>
             </div>
-            <div className='box border orange'>
-                <div className='thumbnail'>Anel Inox</div>
-                <div className='video_container'>
-                    <video className='video' poster={VideoPhotoInox2} onClick={(event) => {event.target.paused ? event.target.play() : event.target.pause()}}>
-                        <source src={VideoInox2}></source>
-                    </video>
-                </div>
-            </div>
-            <div className='box border orange'>
+            <div className='box border orange fadein'>
                 <div className='thumbnail'>Anel Arame</div>
                 <div className='video_container'>
-                    <video className='video' poster={VideoPhotoArame} onClick={(event) => {event.target.paused ? event.target.play() : event.target.pause()}}>
-                        <source src={VideoArame}></source>
-                    </video>
+                    <Video poster={VideoPhotoArame} video={VideoArame} width='192px'/>
                 </div>
             </div>
         </div>
