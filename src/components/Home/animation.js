@@ -10,7 +10,7 @@ const animation = () => {
         // Resize home class for smallest mobiles
         const resizeHome = () => {
             const heightClient = window.innerHeight;
-            if(window.innerWidth < 341){
+            if(window.innerWidth < 342){
                 document.querySelector('.home').style.height = `${heightClient}px`;
                 document.querySelector('.home_background').style.height = `${heightClient}px`
             } else {
