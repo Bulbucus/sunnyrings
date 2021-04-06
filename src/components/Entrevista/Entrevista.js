@@ -5,6 +5,7 @@ import logoNIS from '../../assets/newinsetubal.png';
 
 import Video from '../../hook/Video/Video';
 
+import clickEffect from '../../animation/click';
 
 import './Entrevista.scss'
 
@@ -26,7 +27,7 @@ const Entrevista = () => {
                     <div className='thumbnail'>Aparecimento em</div>
                     <img className='logo' src={logoNIS} alt='New In Setubal Logo'></img>
                 </div>
-                <button href='#' className='button'>Visitar Artigo</button>
+                <a href='https://newinsetubal.nit.pt/compras/sunny-rings-a-nova-marca-que-vende-aneis-feitos-de-talheres/' onClick={(event) => {clickEffect(event.target)}} target='_blank' rel='noreferrer' className='button'>Visitar Artigo</a>
             </div>
         </div>
     )

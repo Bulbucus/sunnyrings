@@ -1,5 +1,5 @@
 
-.inox{
+#inox{
 	display: flex;
 	margin: 0 auto;
 	padding: 0.625rem 0;
@@ -67,22 +67,23 @@
 
 		.select{
 			position: absolute;
-			width: 260px;
-			height: 399.25px;
-			padding: 0;
-
+			height: 100%;
+			padding:0;
+			
 			opacity: 0;
 			z-index: 3;
 
 			.title{
-				display: flex;
+				display: grid;
+				grid-template-columns: 70% 10%;
 				justify-content: space-evenly;
 	
 				border-radius: 0.5rem 0 0 0;
 	
 				.icon_close{
 					display: block;
-					align-self: center;
+					justify-self: center;
+                	align-self: center;
 				}
 			}
 
@@ -94,7 +95,7 @@
 
 				margin: 0.5rem;
 				padding: 0.5rem;
-				height:190px;
+				height:50%;
 
 				background-color: var(--orange);
 				box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.185);

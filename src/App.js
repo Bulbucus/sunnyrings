@@ -1,6 +1,6 @@
 import React, { useEffect }  from 'react';
 
-import fadeInAnimation from './animation/fadeIn';
+import fadeInAnimation from './animation/fadeInScroll';
 
 import Section from './hook/Section/Section';
 
