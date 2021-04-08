@@ -91,6 +91,16 @@ const InoxRing = () => {
         fade('in', `#inox_image_${selectedProduct}`, false, true)
     }, [selectedProduct])
 
+    const [widthWindow, setWidthWindow] = useState(window.innerWidth)
+    useEffect(() => {
+        function handleResize() {
+            setWidthWindow(window.innerWidth);
+            window.innerWidth > 1000 && setSelectOpen(false)
+         }
+    
+        window.addEventListener('resize', handleResize)
+      })
+
     return (
         <div id='inox'>
             <div id='inox_preinfo' className='fadein'>
@@ -102,6 +112,12 @@ const InoxRing = () => {
                     <div className='text'>Anéis feitos de talheres, totalmente <span>reutilizados</span> e 100% inox.</div>
                 </div>
             </div>
+            {widthWindow >= 1000 ? <div className="select fadein box border orange">
+                    <div className='title white'><span>Escolha a peça</span></div>
+                    <div className='products'>
+                        {Products.map((product, index) => {return (<InoxProduct key={index} onClick={() => {setSelectProduct(index)}} photo={product.image} style={selectedProduct === index ? {backgroundColor: '#fff'} : null}></InoxProduct>)})}
+                    </div>
+                </div> : null}
             <div id='inox_product' className="fadein">
             <div style={{display:'flex',position:'relative'}}>
                 <div className="box border orange-linear">
@@ -110,7 +126,7 @@ const InoxRing = () => {
                     <div className='important'>Nome: <span>{Products[selectedProduct].name}</span></div>
                     <div className='price'>{Products[selectedProduct].price}€</div>
                     <div className='text portes'><span>Portes:</span> CTT <br/>(acrescenta um valor de 2,40€)</div>
-                    <div className='orange button' onClick={(event) => {clickEffect(event.target,'#inox_product'); setSelectOpen(true)}}>Escolha a peça</div>
+                    {widthWindow >= 1000  ? null : <div className='orange button' onClick={(event) => {clickEffect(event.target,'#inox_product'); setSelectOpen(true)}}>Escolha a peça</div>}
                     <div className='text note'><span>Nota:</span> Para <span>encomendas</span>, terá que nos <span>contactar</span> através das plataformas, Instagram, Facebook ou E-Mail</div>
                 </div>
                 <div ref={div} className="select box border orange">

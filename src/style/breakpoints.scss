@@ -1,7 +1,22 @@
-$desktop-width: 769px;
+$max-width-app:1240px;
+$tablet-width:530px;
+$desktop-width: 1000px;
+
+@mixin tablet-breakpoint {
+    @media (min-width: #{$tablet-width}){
+        @content;
+    }
+}
+
 
 @mixin desktop-breakpoint{
     @media (min-width: #{$desktop-width}){
-        @content
+        @content;
+    }
+}
+
+@mixin max-breakpoint{
+    @media (min-width: #{$max-width-app}){
+        @content;
     }
 }

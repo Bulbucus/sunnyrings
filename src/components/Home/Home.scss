@@ -34,8 +34,8 @@
     }
 
     //max width
-    @media (min-width:1440px){
-      width: 1440px;
+    @include max-breakpoint{
+      width: $max-width-app;
     }
   }
 
@@ -45,8 +45,8 @@
     width: 100%;
   
     //max width
-    @media (min-width:1440px){
-      width: 1440px;
+    @include max-breakpoint{
+      width: $max-width-app;
     }
   
     &_container{
