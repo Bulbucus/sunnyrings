@@ -1,4 +1,5 @@
-$max-width-app:1240px;
+$max-width-app:1200px;
+$background-width-app:1240px;
 $tablet-width:530px;
 $desktop-width: 1000px;
 
@@ -16,7 +17,7 @@ $desktop-width: 1000px;
 }
 
 @mixin max-breakpoint{
-    @media (min-width: #{$max-width-app}){
+    @media (min-width: #{$background-width-app}){
         @content;
     }
 }

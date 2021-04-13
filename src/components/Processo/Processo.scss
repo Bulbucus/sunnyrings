@@ -9,6 +9,42 @@
         .thumbnail{
             text-align: center;
         }
+        .video_container{
+            video{
+                width: 190px;
+            }  
+        }
     }
 
+}
+
+@import '../../style/breakpoints.scss';
+
+@include tablet-breakpoint{
+    .processo{
+        .box{
+
+            .video_container{
+                video{
+                    width: 290px;
+                }  
+            }
+        }
+    }
+}
+
+@include desktop-breakpoint{
+    .processo{
+        display: flex;
+        margin: 0 0.5rem;
+    
+        .box{
+
+            .video_container{
+                video{
+                    width: 240px;
+                }  
+            }
+        }
+    }
 }

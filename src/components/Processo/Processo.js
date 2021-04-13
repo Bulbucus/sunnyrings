@@ -15,18 +15,18 @@ const Processo = () => {
         <div className='processo'>
             <div className='box border orange fadein'>
                 <div className='thumbnail'>Anel Inox</div>
-                    <Video poster={VideoPhotoInox} video={VideoInox} width='192px'/>
+                    <Video poster={VideoPhotoInox} video={VideoInox}/>
             </div>
             <div className='box border orange fadein'>
                 <div className='thumbnail'>Anel Inox</div>
                 <div className='video_container'>
-                    <Video poster={VideoPhotoInox2} video={VideoInox2} width='192px'/>
+                    <Video poster={VideoPhotoInox2} video={VideoInox2}/>
                 </div>
             </div>
             <div className='box border orange fadein'>
                 <div className='thumbnail'>Anel Arame</div>
                 <div className='video_container'>
-                    <Video poster={VideoPhotoArame} video={VideoArame} width='192px'/>
+                    <Video poster={VideoPhotoArame} video={VideoArame}/>
                 </div>
             </div>
         </div>

@@ -4,14 +4,14 @@
     display: flex;
     flex-direction: column;
     margin: auto;
-    padding: 0.625rem 0;
+    padding: 1.250rem 0;
 
     width: 340px;
     .photo{
         display: flex;
         justify-content: center;
 
-        margin: 0.625rem 0.313rem 0 0.313rem;
+        margin: 0 0.313rem 0 0.313rem;
 
         border-radius: 0.5rem 0.5rem 0em 0rem ;
         img{
@@ -39,62 +39,192 @@
         }
     }
 
-    .select{
-        position: absolute;
-	    height: 100%;
-        padding: 0;
+    .container{
+        .select{
+            position: absolute;
+	        height: 100%;
+            padding: 0;
 
-        opacity: 0;
-        z-index: 3;
-        .title{
-            display: grid;
-			grid-template-columns: 70% 10%;
-            justify-content: space-evenly;
+            opacity: 0;
+            z-index: 3;
+            .title{
+                display: grid;
+	    		grid-template-columns: 70% 10%;
+                justify-content: space-evenly;
 
-            border-radius: 0;
+                border-radius: 0;
 
-            .icon_close{
-                display: block;
-                justify-self: center;
-                align-self: center;
+                .icon_close{
+                    display: block;
+                    justify-self: center;
+                    align-self: center;
+                }
+            }
+
+            .products{
+                display: flex;
+                justify-content: flex-start;
+                flex-wrap: wrap;
+                overflow-y: scroll;
+
+                margin: 0.5rem;
+                padding: 0.5rem;
+                height:50%;
+
+                background-color: var(--orange);
+                box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.185);
+
+                .mini{
+                    height: 60px;
+                    width: 60px;
+                    margin: 0.3rem 0.1rem;
+
+                    border-radius: 0.5rem;
+                    padding: 0;
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        margin: 0 auto;
+                    }
+                }
+            }
+
+            .important{
+                margin-top: 0.5rem;
+            }
+
+            .note{
+                padding: 0.625rem;
             }
         }
+    }
+    
+}
 
-        .products{
-            display: flex;
-            justify-content: flex-start;
-            flex-wrap: wrap;
-            overflow-y: scroll;
+@import '../../../style/breakpoints.scss';
 
-            margin: 0.5rem;
-            padding: 0.5rem;
-            height:50%;
+//tablet
+@include tablet-breakpoint{
+    #arame_product{
+        width: 420px;
 
-            background-color: var(--orange);
-            box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.185);
+        .photo{
 
-            .mini{
-                height: 60px;
-                width: 60px;
-                margin: 0.3rem 0.1rem;
+            img{
+                width: calc(112px * 1.3);
+                height: calc(163px * 1.3);
+            }
+        }
+    }
+}
 
-                border-radius: 0.5rem;
-                padding: 0;
+//desktop
+@include desktop-breakpoint{
+    #arame_product{
+        display: grid;
+		justify-items:center;
+        align-items: center;
+		grid-template-columns: 50% 50%;
+		grid-template-rows: 35% 65%;
+		width: 98%;
+
+        #arame_info{
+            max-width: 470px;
+			grid-column: 1;
+			grid-row: 1 / 3;
+
+            .photo{
+
                 img{
-                    width: 50px;
-                    height: 50px;
-                    margin: 0 auto;
+                    width: calc(112px * 1.6);
+                    height: calc(163px * 1.6);
                 }
             }
         }
 
-        .important{
-            margin-top: 0.5rem;
+        #arame_plus{
+            border-radius: 0.5rem;
+            width: 470px;
+            height: fit-content;
         }
-        
-        .note{
-            padding: 0.625rem;
+
+        .select{
+            height: fit-content;
+            max-height: 395px;
+            width:470px;
+			padding:0;
+
+
+            border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+			.title{
+				display: flex;
+				justify-content: center;
+	
+				border-radius: 0.5rem 0.5rem 0 0;
+	
+				.icon_close{
+					display: block;
+					justify-self: center;
+                	align-self: center;
+				}
+			}
+
+            .thumbnail{
+                margin: 0.313rem 0.813rem;
+            }
+
+            .text{
+                margin: 0.313rem 0.813rem;
+            }
+
+            .products{
+				display: flex;
+				justify-content: center;
+				flex-wrap: wrap;
+				overflow-y: auto;
+
+				margin: 0.5rem;
+				padding: 0.5rem;
+
+				background-color: var(--orange);
+				box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.185);
+
+				&::-webkit-scrollbar-track{
+					background-color: #FA822D;
+				}
+	
+				&::-webkit-scrollbar{
+					width: 12px;
+					background-color: #FA822D;;
+				}
+	
+				&::-webkit-scrollbar-thumb{
+					background-color: #fff;
+				}
+	
+
+				.mini{
+					height: 60px;
+					width: 60px;
+					margin: 0.2rem 0.5rem;
+
+					border-radius: 0.5rem;
+					padding: 0;
+					img{
+						height: 50px;
+                        width: 50px;
+						margin: 0 auto;
+					}
+				}
+			}
+
+			.important{
+				margin-top: 0.5rem;
+			}
+			
+			.note{
+				padding: 0.625rem;
+			}
         }
     }
-    
 }

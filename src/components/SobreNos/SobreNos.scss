@@ -6,3 +6,19 @@
         margin: 0.625rem 0;
     }
 }
+
+
+@import '../../style/breakpoints.scss';
+
+@include tablet-breakpoint{
+    .sobrenos{
+        max-width: 420px;
+    }
+}
+
+
+@include desktop-breakpoint{
+    .sobrenos{
+        max-width: 620px;
+    }
+}
