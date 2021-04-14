@@ -21,9 +21,9 @@ const Home = () => {
             <div className="home_background"></div>
             <div className="home_contacts">
                 <div className="home_contacts_container">
-                    <FacebookIcon className="home_contacts_facebook"></FacebookIcon>
-                    <InstagramIcon className="home_contacts_instagram"></InstagramIcon>
-                    <MailIcon className="home_contacts_mail"></MailIcon>
+                    <a href="https://www.facebook.com/Sunny-Rings-103483725036223/" target='_blank' rel='noreferrer'><FacebookIcon className="home_contacts_facebook"></FacebookIcon></a>
+                    <a href="https://www.instagram.com/sunny.rings/" target='_blank' rel='noreferrer'><InstagramIcon className="home_contacts_instagram"></InstagramIcon></a>
+                    <a href="mailto: madapires9@gmail.com" target='_blank' rel='noreferrer'><MailIcon className="home_contacts_mail"></MailIcon></a>
                 </div>
             </div>
             <div className="home_arrows white">
